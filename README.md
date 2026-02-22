@@ -31,7 +31,7 @@ tests/
   test_api.py      # End-to-end API tests
 ```
 
-## Run locally
+## Run locally (Python)
 
 ```bash
 python -m venv .venv
@@ -41,6 +41,28 @@ uvicorn app.main:app --reload
 ```
 
 API docs: `http://127.0.0.1:8000/docs`
+
+## Run on any device (Docker)
+
+If Python/package setup is different on your machine, use Docker instead:
+
+```bash
+docker compose up --build
+```
+
+Then open:
+- API docs: `http://127.0.0.1:8000/docs`
+- Health: `http://127.0.0.1:8000/health`
+
+## Quick local verification
+
+```bash
+curl http://127.0.0.1:8000/health
+```
+Expected output:
+```json
+{"status":"ok"}
+```
 
 ## Example Usage
 
